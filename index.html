@@ -9,7 +9,7 @@
     /* HERO */
     .hero {
       position: relative;
-      height: 100vh;
+      height: 75vh;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -52,7 +52,7 @@
 
     .hero-name {
       font-family: var(--serif);
-      font-size: clamp(4rem, 10vw, 8rem);
+      font-size: clamp(3rem, 8vw, 6.5rem);
       font-weight: 300;
       letter-spacing: -0.02em;
       line-height: 0.9;
@@ -135,13 +135,10 @@
 
     /* THESIS SECTION */
     .thesis-section {
-      max-width: 1100px;
+      max-width: 800px;
       margin: 0 auto;
       padding: 0 3rem 4rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
+      text-align: center;
     }
 
     .thesis-meta h2 {
@@ -170,6 +167,10 @@
     .awards-list {
       list-style: none;
       margin-top: 2rem;
+      text-align: left;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .awards-list li {
       font-size: 0.75rem;
@@ -183,8 +184,6 @@
       color: var(--fg);
       font-weight: 400;
     }
-
-    .thesis-video .video-wrapper { background: #111; }
 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
