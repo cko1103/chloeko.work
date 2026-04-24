@@ -10,7 +10,8 @@
   align-items: flex-end;
 }
 
-.proj-cover {
+.proj-cover,
+.proj-cover-video {
   position: absolute;
   inset: 0;
   width: 100%;

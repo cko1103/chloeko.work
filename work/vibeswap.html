@@ -25,7 +25,7 @@
 
 <div class="page">
   <div class="proj-hero">
-    <img src="../images/work/vanessa-hair-vibeswap/Untitled-1.jpg" alt="Vanessa Hair VibeSwap" class="proj-cover">
+    <video class="proj-cover-video" src="../images/work/vanessa-hair-vibeswap/VibeSwap.mp4" muted playsinline data-start="3"></video>
     <div class="proj-hero-text">
       <p class="proj-category">Brand · Motion Design</p>
       <h1>VibeSwap</h1>
@@ -67,5 +67,14 @@
   const nav = document.getElementById('navlinks');
   ham.addEventListener('click', () => nav.classList.toggle('open'));
 </script>
+  <script>
+  (function(){
+    var v = document.querySelector(".proj-cover-video");
+    if(!v) return;
+    var t = parseFloat(v.dataset.start)||0;
+    v.addEventListener("loadedmetadata", function(){ v.currentTime = t; },{once:true});
+    v.load();
+  })();
+  </script>
 </body>
 </html>

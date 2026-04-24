@@ -25,7 +25,7 @@
 
 <div class="page">
   <div class="proj-hero">
-    <img src="../images/work/flower-rd/Screenshot_2023-03-09_225252.png" alt="Flower R&D" class="proj-cover">
+    <video class="proj-cover-video" src="../images/work/flower-rd/0304_FlowerBloom.mp4" muted playsinline data-start="6"></video>
     <div class="proj-hero-text">
       <p class="proj-category">Houdini FX · R&amp;D</p>
       <h1>Flower R&amp;D</h1>
@@ -123,7 +123,7 @@
     </div>
 
     <div class="proj-nav">
-      <a href="vanessa-hair-vibeswap.html" class="proj-back">← Vanessa Hair</a>
+      <a href="vibeswap.html" class="proj-back">← Vanessa Hair</a>
       <a href="nebula-rd.html" class="proj-next">Nebula R&amp;D →</a>
     </div>
   </div>
@@ -134,5 +134,14 @@
   const nav = document.getElementById('navlinks');
   ham.addEventListener('click', () => nav.classList.toggle('open'));
 </script>
+  <script>
+  (function(){
+    var v = document.querySelector(".proj-cover-video");
+    if(!v) return;
+    var t = parseFloat(v.dataset.start)||0;
+    v.addEventListener("loadedmetadata", function(){ v.currentTime = t; },{once:true});
+    v.load();
+  })();
+  </script>
 </body>
 </html>

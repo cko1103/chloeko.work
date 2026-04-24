@@ -25,7 +25,7 @@
 
 <div class="page">
   <div class="proj-hero">
-    <img src="../images/work/samsung-engineering/그림01.jpg" alt="Samsung Engineering" class="proj-cover">
+    <video class="proj-cover-video" src="../images/work/samsung-engineering/ENG3.mp4" muted playsinline data-start="0"></video>
     <div class="proj-hero-text">
       <p class="proj-category">Motion Design · Cinema4D · After Effects</p>
       <h1>Samsung Engineering</h1>
@@ -92,7 +92,7 @@
     </div>
 
     <div class="proj-nav">
-      <a href="kiss-joah-mascara.html" class="proj-back">← KISS JOAH Mascara</a>
+      <a href="kiss-joah.html" class="proj-back">← KISS JOAH Mascara</a>
       <a href="lg-u-virtual-office.html" class="proj-next">LG U+ Virtual Office →</a>
     </div>
   </div>
@@ -103,5 +103,14 @@
   const nav = document.getElementById('navlinks');
   ham.addEventListener('click', () => nav.classList.toggle('open'));
 </script>
+  <script>
+  (function(){
+    var v = document.querySelector(".proj-cover-video");
+    if(!v) return;
+    var t = parseFloat(v.dataset.start)||0;
+    v.addEventListener("loadedmetadata", function(){ v.currentTime = t; },{once:true});
+    v.load();
+  })();
+  </script>
 </body>
 </html>

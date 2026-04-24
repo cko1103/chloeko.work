@@ -25,7 +25,7 @@
 
 <div class="page">
   <div class="proj-hero">
-    <img src="../images/work/nebula-rd/nebulaebg.png" alt="Nebula R&D" class="proj-cover">
+    <video class="proj-cover-video" src="../images/work/nebula-rd/Neb_SC01.mp4" muted playsinline data-start="0"></video>
     <div class="proj-hero-text">
       <p class="proj-category">Houdini FX · R&amp;D</p>
       <h1>Nebula R&amp;D</h1>
@@ -125,5 +125,14 @@
   const nav = document.getElementById('navlinks');
   ham.addEventListener('click', () => nav.classList.toggle('open'));
 </script>
+  <script>
+  (function(){
+    var v = document.querySelector(".proj-cover-video");
+    if(!v) return;
+    var t = parseFloat(v.dataset.start)||0;
+    v.addEventListener("loadedmetadata", function(){ v.currentTime = t; },{once:true});
+    v.load();
+  })();
+  </script>
 </body>
 </html>
