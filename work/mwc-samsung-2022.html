@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MWC Samsung 2022 · Chloe Ko</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="project.css">
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-brand">
+    <span class="name">Chloe Ko</span>
+    <span class="title">CG Generalist &amp; FX Artist</span>
+  </a>
+  <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navlinks">
+    <li><a href="../index.html">ShowReel</a></li>
+    <li><a href="../work.html" class="active">Work</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../resume.html">Resume</a></li>
+    <li><a href="../drawings.html">Drawings</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+  <div class="proj-hero">
+    <img src="../images/work/mwc-samsung-2022/KakaoTalk_20220920_160808528.png" alt="MWC Samsung 2022" class="proj-cover">
+    <div class="proj-hero-text">
+      <p class="proj-category">Anamorphic Projection Mapping · Cinema4D · MWC 2022</p>
+      <h1>MWC Samsung 2022</h1>
+    </div>
+  </div>
+
+  <div class="proj-body">
+    <div class="proj-meta">
+      <div class="meta-item"><span class="meta-label">Tools</span><span>Cinema4D, Octane</span></div>
+      <div class="meta-item"><span class="meta-label">Client</span><span>Samsung Electronics</span></div>
+      <div class="meta-item"><span class="meta-label">Venue</span><span>Mobile World Congress 2022, Barcelona</span></div>
+      <div class="meta-item"><span class="meta-label">Studio</span><span>DaamDaam Samuso</span></div>
+      <div class="meta-item"><span class="meta-label">Role</span><span>3D hero object only</span></div>
+    </div>
+
+    <div class="proj-text">
+      <p>Our team worked on Samsung's Galaxy event at Mobile World Congress 2022 in Barcelona. We focused on creating the anamorphic projection mapping piece featuring Samsung's brand message — "Life opens up with Galaxy: Innovation that opens possibilities, Open experiences, Trusted performance open to all, Positive impact toward an open world" — <em>Openness</em>.</p>
+      <p>Setup: 2 walls + 1 floor, with 4 projectors. Getting the visual illusion right was especially challenging because the space was compact and viewers needed to stand at a precise viewpoint to get the full anamorphic effect.</p>
+      <p>I built the scene setup and animations in Cinema4D, and also animated the products for the new Galaxy series launch — rendered using C4D Octane's toon shader.</p>
+    </div>
+
+    <!-- MWC1.mp4 — anamorphic projection piece -->
+    <div class="proj-video">
+      <div class="video-wrapper">
+        <video controls>
+          <source src="../images/work/mwc-samsung-2022/MWC1.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="proj-gallery single">
+      <img src="../images/work/mwc-samsung-2022/proj.png" alt="2 walls + 1 floor projection setup">
+    </div>
+
+    <div class="proj-text">
+      <p>This is what it looked like on-site!</p>
+    </div>
+
+    <div class="proj-gallery single">
+      <img src="../images/work/mwc-samsung-2022/KakaoTalk_20220920_160808528.png" alt="On-site photo">
+    </div>
+
+    <!-- MWC2.mp4 — Galaxy product animation -->
+    <div class="proj-video">
+      <p class="video-label">Galaxy series product animation</p>
+      <div class="video-wrapper">
+        <video controls>
+          <source src="../images/work/mwc-samsung-2022/MWC2.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="proj-nav">
+      <a href="rain-window-fx.html" class="proj-back">← Rain on Window FX</a>
+      <a href="kiss-joah-mascara.html" class="proj-next">KISS JOAH Mascara →</a>
+    </div>
+  </div>
+</div>
+<footer>&copy; 2024 Chloe Ko &nbsp;&middot;&nbsp; All rights reserved</footer>
+<script>
+  const ham = document.getElementById('ham');
+  const nav = document.getElementById('navlinks');
+  ham.addEventListener('click', () => nav.classList.toggle('open'));
+</script>
+</body>
+</html>

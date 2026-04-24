@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SK CES 2022 · Chloe Ko</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="project.css">
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-brand">
+    <span class="name">Chloe Ko</span>
+    <span class="title">CG Generalist &amp; FX Artist</span>
+  </a>
+  <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navlinks">
+    <li><a href="../index.html">ShowReel</a></li>
+    <li><a href="../work.html" class="active">Work</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../resume.html">Resume</a></li>
+    <li><a href="../drawings.html">Drawings</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+  <div class="proj-hero">
+    <img src="../images/work/sk-ces-2022/HAN26185.jpg" alt="SK CES 2022" class="proj-cover">
+    <div class="proj-hero-text">
+      <p class="proj-category">Houdini FX · Projection Mapping · CES 2022</p>
+      <h1>SK CES 2022</h1>
+    </div>
+  </div>
+
+  <div class="proj-body">
+    <div class="proj-meta">
+      <div class="meta-item"><span class="meta-label">Tools</span><span>Houdini, Cinema4D</span></div>
+      <div class="meta-item"><span class="meta-label">Client</span><span>SK Group</span></div>
+      <div class="meta-item"><span class="meta-label">Venue</span><span>CES 2022, Las Vegas</span></div>
+      <div class="meta-item"><span class="meta-label">Studio</span><span>DaamDaam Samuso</span></div>
+    </div>
+
+    <div class="proj-text">
+      <p>During my gap year I had the opportunity to participate in CES 2022 in Las Vegas. A huge immersive space, projection mapped across two walls (8012×2160), floor (6232×3788), and a tree (four 1920×1080 panels).</p>
+
+      <blockquote>SK Group was recognized for its efforts by one of America's biggest trade show marketers. SK and six of its affiliates, including SK hynix, joined together to create the "Green Forest Pavilion," highlighting the company's Net Zero policy. The pavilion was praised for its use of immersive activities to inform visitors about eco-friendly technologies.</blockquote>
+
+      <p>As a motion graphics intern I ran many R&amp;Ds. Not every effect made it into the final output — only one did — but each was a great learning experience.</p>
+    </div>
+
+    <!-- 1.mp4 — show preview / main wall output -->
+    <div class="proj-video">
+      <p class="video-label">Show preview — wall projection</p>
+      <div class="video-wrapper">
+        <video controls>
+          <source src="../images/work/sk-ces-2022/1.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="proj-text">
+      <h2>Disintegration Effect</h2>
+      <p>We needed a disintegration effect for disappearing animals (visible around 01:30 in the show video). I achieved this through Vellum grains in Houdini with a customizable disintegration direction. The team ultimately went with Cinema4D X-Particles for production.</p>
+    </div>
+
+    <!-- 2.mp4 — disintegration R&D -->
+    <div class="proj-video">
+      <div class="video-wrapper">
+        <video controls>
+          <source src="../images/work/sk-ces-2022/2.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="proj-text">
+      <p>Another disintegration experiment — used a growth solver to create customizable starting points. Made for a close-up scene, eventually dropped.</p>
+    </div>
+
+    <!-- 3.mp4 — growth solver disintegration -->
+    <div class="proj-video">
+      <div class="video-wrapper">
+        <video controls>
+          <source src="../images/work/sk-ces-2022/3.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="proj-text">
+      <h2>Ember Effect</h2>
+      <p>Needed abstract embers for a scene. First version used POP Curve Force on hand-drawn curves; second version used POP Advect by Volumes.</p>
+    </div>
+
+    <!-- 4.mp4 — ember effect R&D -->
+    <div class="proj-video">
+      <div class="video-wrapper">
+        <video controls>
+          <source src="../images/work/sk-ces-2022/4.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="proj-text">
+      <h2>The Approved Effect</h2>
+      <p>This is the one that made it into final production! When viewers press "yes" to join the net zero journey, a particle trail effect activates — particles flowing down the walls and disappearing at a destination point on the floor. Achieved with a <code>popwrangle</code>: <code>@P = minpos(1,@P);</code></p>
+    </div>
+
+    <!-- 5.mp4 — approved particle trail -->
+    <div class="proj-video">
+      <div class="video-wrapper">
+        <video controls>
+          <source src="../images/work/sk-ces-2022/5.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="proj-gallery">
+      <img src="../images/work/sk-ces-2022/floor0274.png" alt="Floor particle trail">
+      <img src="../images/work/sk-ces-2022/Wall_0398.png" alt="Wall particle trail">
+    </div>
+
+    <div class="proj-text">
+      <p>It was originally more curly and stringy, but the look changed during the lookdev process (left image).</p>
+    </div>
+
+    <!-- 6.mp4 — additional / behind the scenes -->
+    <div class="proj-video">
+      <div class="video-wrapper">
+        <video controls>
+          <source src="../images/work/sk-ces-2022/6.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="proj-nav">
+      <a href="lg-wonderbox-showcase-2022.html" class="proj-back">← LG Wonderbox</a>
+      <a href="kiss-press-go.html" class="proj-next">KISS Press&amp;Go →</a>
+    </div>
+  </div>
+</div>
+<footer>&copy; 2024 Chloe Ko &nbsp;&middot;&nbsp; All rights reserved</footer>
+<script>
+  const ham = document.getElementById('ham');
+  const nav = document.getElementById('navlinks');
+  ham.addEventListener('click', () => nav.classList.toggle('open'));
+</script>
+</body>
+</html>

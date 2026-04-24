@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samsung Engineering · Chloe Ko</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="project.css">
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-brand">
+    <span class="name">Chloe Ko</span>
+    <span class="title">CG Generalist &amp; FX Artist</span>
+  </a>
+  <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navlinks">
+    <li><a href="../index.html">ShowReel</a></li>
+    <li><a href="../work.html" class="active">Work</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../resume.html">Resume</a></li>
+    <li><a href="../drawings.html">Drawings</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+  <div class="proj-hero">
+    <img src="../images/work/samsung-engineering/그림01.jpg" alt="Samsung Engineering" class="proj-cover">
+    <div class="proj-hero-text">
+      <p class="proj-category">Motion Design · Cinema4D · After Effects</p>
+      <h1>Samsung Engineering</h1>
+    </div>
+  </div>
+
+  <div class="proj-body">
+    <div class="proj-meta">
+      <div class="meta-item"><span class="meta-label">Tools</span><span>Cinema4D, After Effects</span></div>
+      <div class="meta-item"><span class="meta-label">Client</span><span>Samsung Engineering</span></div>
+      <div class="meta-item"><span class="meta-label">Studio</span><span>DaamDaam Samuso</span></div>
+      <div class="meta-item"><span class="meta-label">Display</span><span>1 wall (5120×1024) + 2 robot arm OLEDs</span></div>
+    </div>
+
+    <div class="proj-text">
+      <p>Introduction video for Samsung Engineering's "Tech Zone" — a promotional space in their headquarters. The setup synced a wide wall display (5120×1024) with two smaller transparent OLED displays mounted on a robotic arm.</p>
+    </div>
+
+    <!-- ENG1.mp4 — final preview for wall display -->
+    <div class="proj-video">
+      <p class="video-label">Final preview — wall display</p>
+      <div class="video-wrapper">
+        <video controls>
+          <source src="../images/work/samsung-engineering/ENG1.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="proj-gallery">
+      <img src="../images/work/samsung-engineering/그림01.jpg" alt="Samsung Engineering Tech Zone — site photo 1">
+      <img src="../images/work/samsung-engineering/그림02.jpg" alt="Samsung Engineering Tech Zone — site photo 2">
+    </div>
+
+    <div class="proj-text">
+      <p>The actual site looked like this! Two little shots I made ended up being cut from the storyboard.</p>
+    </div>
+
+    <!-- ENG2.mp4 — cut shot 1 -->
+    <div class="proj-video">
+      <div class="video-wrapper">
+        <video controls>
+          <source src="../images/work/samsung-engineering/ENG2.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!-- ENG3.mp4 — cut shot 2 -->
+    <div class="proj-video">
+      <div class="video-wrapper">
+        <video controls>
+          <source src="../images/work/samsung-engineering/ENG3.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!-- ENG4.mp4 — project reel -->
+    <div class="proj-video">
+      <p class="video-label">Project reel</p>
+      <div class="video-wrapper">
+        <video controls>
+          <source src="../images/work/samsung-engineering/ENG4.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="proj-nav">
+      <a href="kiss-joah-mascara.html" class="proj-back">← KISS JOAH Mascara</a>
+      <a href="lg-u-virtual-office.html" class="proj-next">LG U+ Virtual Office →</a>
+    </div>
+  </div>
+</div>
+<footer>&copy; 2024 Chloe Ko &nbsp;&middot;&nbsp; All rights reserved</footer>
+<script>
+  const ham = document.getElementById('ham');
+  const nav = document.getElementById('navlinks');
+  ham.addEventListener('click', () => nav.classList.toggle('open'));
+</script>
+</body>
+</html>

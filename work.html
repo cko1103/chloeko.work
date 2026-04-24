@@ -25,19 +25,51 @@
       cursor: pointer;
     }
 
-    .work-item img {
+    /* Cover image */
+    .work-item img.cover {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease, filter 0.5s ease;
+      transition: transform 0.6s ease, filter 0.4s ease, opacity 0.4s ease;
       filter: brightness(0.75) saturate(0.8);
+      z-index: 1;
     }
 
-    .work-item:hover img {
-      transform: scale(1.04);
-      filter: brightness(0.55) saturate(0.6);
+    /* Hover video */
+    .work-item video.preview {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 2;
+      filter: brightness(0.7);
     }
 
+    /* On hover: fade video in, dim image */
+    .work-item:hover img.cover {
+      filter: brightness(0.4) saturate(0.5);
+      transform: scale(1.03);
+    }
+    .work-item:hover video.preview {
+      opacity: 1;
+    }
+
+    /* Items with no image, just video cover */
+    .work-item.video-only video.preview {
+      opacity: 1;
+      filter: brightness(0.65);
+      transition: filter 0.4s ease;
+    }
+    .work-item.video-only:hover video.preview {
+      filter: brightness(0.45);
+    }
+
+    /* Info overlay */
     .work-item-info {
       position: absolute;
       inset: 0;
@@ -45,7 +77,8 @@
       flex-direction: column;
       justify-content: flex-end;
       padding: 1.5rem;
-      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+      background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%);
+      z-index: 3;
     }
 
     .work-item-title {
@@ -54,20 +87,16 @@
       font-weight: 300;
       color: var(--fg);
       letter-spacing: 0.01em;
-      transform: translateY(4px);
+      transform: translateY(5px);
       transition: transform 0.3s;
     }
-
-    .work-item:hover .work-item-title {
-      transform: translateY(0);
-    }
+    .work-item:hover .work-item-title { transform: translateY(0); }
 
     .work-item-arrow {
       position: absolute;
-      top: 1.2rem;
-      right: 1.2rem;
+      top: 1.2rem; right: 1.2rem;
       width: 28px; height: 28px;
-      border: 1px solid rgba(255,255,255,0.3);
+      border: 1px solid rgba(255,255,255,0.35);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -75,25 +104,10 @@
       opacity: 0;
       transform: scale(0.8);
       transition: opacity 0.3s, transform 0.3s;
+      z-index: 4;
     }
     .work-item-arrow svg { width: 12px; height: 12px; }
-    .work-item:hover .work-item-arrow {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    /* No image fallback */
-    .work-item.no-img {
-      background: var(--bg2);
-    }
-    .work-item.no-img .work-item-info {
-      justify-content: center;
-      align-items: center;
-      background: none;
-    }
-    .work-item.no-img .work-item-title {
-      text-align: center;
-    }
+    .work-item:hover .work-item-arrow { opacity: 1; transform: scale(1); }
 
     .content-wrap { max-width: 1400px; margin: 0 auto; }
 
@@ -107,7 +121,7 @@
 <nav>
   <a href="index.html" class="nav-brand">
     <span class="name">Chloe Ko</span>
-    <span class="title">FX Artist &amp; 3D Motion Designer</span>
+    <span class="title">CG Generalist &amp; FX Artist</span>
   </a>
   <button class="hamburger" id="ham" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -129,161 +143,145 @@
   <div class="content-wrap">
     <div class="work-grid">
 
-      <!-- Each work item: replace href with your detail page, src with your image -->
-
+      <!-- 1. Vanessa Hair -->
       <a class="work-item" href="work/vanessa-hair-vibeswap.html">
-        <img src="images/work/vanessa-hair-vibeswap.jpg" alt="Vanessa Hair - VibeSwap"
-             onerror="this.style.display='none'">
+        <img class="cover" src="images/work/vanessa-hair-vibeswap/Untitled-1.jpg" alt="Vanessa Hair VibeSwap">
+        <video class="preview" src="images/work/vanessa-hair-vibeswap/VibeSwap.mp4" muted loop playsinline></video>
         <div class="work-item-info">
           <div class="work-item-title">Vanessa Hair — VibeSwap</div>
         </div>
         <div class="work-item-arrow">
-          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
+          <svg viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
         </div>
       </a>
 
+      <!-- 2. Flower R&D -->
       <a class="work-item" href="work/flower-rd.html">
-        <img src="images/work/flower-rd.jpg" alt="Flower R&D"
-             onerror="this.style.display='none'">
+        <img class="cover" src="images/work/flower-rd/Screenshot_2023-03-09_225252.png" alt="Flower R&D">
+        <video class="preview" src="images/work/flower-rd/0304_FlowerBloom.mp4" muted loop playsinline></video>
         <div class="work-item-info">
           <div class="work-item-title">Flower R&amp;D</div>
         </div>
         <div class="work-item-arrow">
-          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
+          <svg viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
         </div>
       </a>
 
+      <!-- 3. Nebula R&D -->
       <a class="work-item" href="work/nebula-rd.html">
-        <img src="images/work/nebula-rd.jpg" alt="Nebula R&D"
-             onerror="this.style.display='none'">
+        <img class="cover" src="images/work/nebula-rd/nebulaebg.png" alt="Nebula R&D">
+        <video class="preview" src="images/work/nebula-rd/ptc.mp4" muted loop playsinline></video>
         <div class="work-item-info">
           <div class="work-item-title">Nebula R&amp;D</div>
         </div>
         <div class="work-item-arrow">
-          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
+          <svg viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
         </div>
       </a>
 
-      <a class="work-item" href="work/lg-wonderbox.html">
-        <img src="images/work/lg-wonderbox.jpg" alt="LG Wonderbox Showcase 2022"
-             onerror="this.style.display='none'">
+      <!-- 4. LG Wonderbox -->
+      <a class="work-item" href="work/lg-wonderbox-showcase-2022.html">
+        <img class="cover" src="images/work/lg-wonderbox-showcase-2022/Final_undistorted_%280-00-07-27%29.png" alt="LG Wonderbox Showcase 2022">
+        <video class="preview" src="images/work/lg-wonderbox-showcase-2022/ParticleMorph.mp4" muted loop playsinline></video>
         <div class="work-item-info">
           <div class="work-item-title">LG Wonderbox Showcase 2022</div>
         </div>
         <div class="work-item-arrow">
-          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
+          <svg viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
         </div>
       </a>
 
+      <!-- 5. SK CES 2022 -->
       <a class="work-item" href="work/sk-ces-2022.html">
-        <img src="images/work/sk-ces-2022.jpg" alt="SK CES 2022"
-             onerror="this.style.display='none'">
+        <img class="cover" src="images/work/sk-ces-2022/HAN26185.jpg" alt="SK CES 2022">
+        <video class="preview" src="images/work/sk-ces-2022/5.mp4" muted loop playsinline></video>
         <div class="work-item-info">
           <div class="work-item-title">SK CES 2022</div>
         </div>
         <div class="work-item-arrow">
-          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
+          <svg viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
         </div>
       </a>
 
-      <a class="work-item" href="work/kiss-press-go.html">
-        <img src="images/work/kiss-press-go.jpg" alt="KISS Press&Go Lashes"
-             onerror="this.style.display='none'">
+      <!-- 6. KISS Press&Go — video-only cover -->
+      <a class="work-item video-only" href="work/kiss-press-go.html">
+        <video class="preview" src="images/work/kiss/2023_09_18_Sizzle_V2.mp4" muted loop playsinline></video>
         <div class="work-item-info">
           <div class="work-item-title">KISS Press&amp;Go Lashes</div>
         </div>
         <div class="work-item-arrow">
-          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
+          <svg viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
         </div>
       </a>
 
+      <!-- 7. KISS Product Visualization -->
       <a class="work-item" href="work/kiss-product-viz.html">
-        <img src="images/work/kiss-product-viz.jpg" alt="KISS Product Visualization"
-             onerror="this.style.display='none'">
+        <img class="cover" src="images/work/kiss-product-viz/Clb_v01_0058.png" alt="KISS Product Visualization">
         <div class="work-item-info">
           <div class="work-item-title">KISS Product Visualization</div>
         </div>
         <div class="work-item-arrow">
-          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
+          <svg viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
         </div>
       </a>
 
+      <!-- 8. Rain on Window FX -->
       <a class="work-item" href="work/rain-window-fx.html">
-        <img src="images/work/rain-window-fx.jpg" alt="Rain on window FX"
-             onerror="this.style.display='none'">
+        <img class="cover" src="images/work/rain-window-fx/KakaoTalk_20221031_003410951.png" alt="Rain on Window FX">
+        <video class="preview" src="images/work/rain-window-fx/Rain1.mp4" muted loop playsinline></video>
         <div class="work-item-info">
           <div class="work-item-title">Rain on Window FX</div>
         </div>
         <div class="work-item-arrow">
-          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
+          <svg viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
         </div>
       </a>
 
+      <!-- 9. MWC Samsung 2022 -->
       <a class="work-item" href="work/mwc-samsung-2022.html">
-        <img src="images/work/mwc-samsung-2022.jpg" alt="MWC Samsung 2022"
-             onerror="this.style.display='none'">
+        <img class="cover" src="images/work/mwc-samsung-2022/KakaoTalk_20220920_160808528.png" alt="MWC Samsung 2022">
+        <video class="preview" src="images/work/mwc-samsung-2022/MWC1.mp4" muted loop playsinline></video>
         <div class="work-item-info">
           <div class="work-item-title">MWC Samsung 2022</div>
         </div>
         <div class="work-item-arrow">
-          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
+          <svg viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
         </div>
       </a>
 
+      <!-- 10. KISS JOAH High Roller Mascara -->
       <a class="work-item" href="work/kiss-joah-mascara.html">
-        <img src="images/work/kiss-joah-mascara.jpg" alt="KISS JOAH High Roller Mascara"
-             onerror="this.style.display='none'">
+        <img class="cover" src="images/work/new-page-4/SC04_71.png" alt="KISS JOAH High Roller Mascara">
+        <video class="preview" src="images/work/new-page-4/JOAH1.mp4" muted loop playsinline></video>
         <div class="work-item-info">
           <div class="work-item-title">KISS JOAH — High Roller Mascara</div>
         </div>
         <div class="work-item-arrow">
-          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
+          <svg viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
         </div>
       </a>
 
+      <!-- 11. Samsung Engineering -->
       <a class="work-item" href="work/samsung-engineering.html">
-        <img src="images/work/samsung-engineering.jpg" alt="Samsung Engineering"
-             onerror="this.style.display='none'">
+        <img class="cover" src="images/work/samsung-engineering/그림01.jpg" alt="Samsung Engineering">
+        <video class="preview" src="images/work/samsung-engineering/ENG1.mp4" muted loop playsinline></video>
         <div class="work-item-info">
           <div class="work-item-title">Samsung Engineering</div>
         </div>
         <div class="work-item-arrow">
-          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
+          <svg viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
         </div>
       </a>
 
+      <!-- 12. LG U+ Virtual Office -->
       <a class="work-item" href="work/lg-u-virtual-office.html">
-        <img src="images/work/lg-u-virtual-office.jpg" alt="LG U+ Virtual Office"
-             onerror="this.style.display='none'">
+        <img class="cover" src="images/work/lg-u-virtual-office/KakaoTalk_20220920_154743688.png" alt="LG U+ Virtual Office">
+        <video class="preview" src="images/work/lg-u-virtual-office/0223_LG%20U%20Plus%20Virtual%20Office_ENG.mp4" muted loop playsinline></video>
         <div class="work-item-info">
           <div class="work-item-title">LG U+ Virtual Office</div>
         </div>
         <div class="work-item-arrow">
-          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
+          <svg viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
         </div>
       </a>
 
@@ -291,14 +289,50 @@
   </div>
 </div>
 
-<footer>
-  &copy; 2024 Chloe Ko &nbsp;&middot;&nbsp; All rights reserved
-</footer>
+<footer>&copy; 2024 Chloe Ko &nbsp;&middot;&nbsp; All rights reserved</footer>
 
 <script>
+  // Nav hamburger
   const ham = document.getElementById('ham');
-  const nav = document.getElementById('navlinks');
-  ham.addEventListener('click', () => nav.classList.toggle('open'));
+  const navLinks = document.getElementById('navlinks');
+  ham.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+  // Hover video play/pause
+  document.querySelectorAll('.work-item').forEach(item => {
+    const video = item.querySelector('video.preview');
+    if (!video) return;
+
+    // Only load on hover, not on page load (saves bandwidth)
+    let loaded = false;
+
+    item.addEventListener('mouseenter', () => {
+      if (!loaded) {
+        video.load();
+        loaded = true;
+      }
+      video.currentTime = 0;
+      video.play().catch(() => {});
+    });
+
+    item.addEventListener('mouseleave', () => {
+      video.pause();
+    });
+
+    // Touch support (mobile: tap to preview, tap again to navigate)
+    let tapped = false;
+    item.addEventListener('touchstart', (e) => {
+      if (!tapped) {
+        e.preventDefault();
+        tapped = true;
+        if (!loaded) { video.load(); loaded = true; }
+        video.currentTime = 0;
+        video.play().catch(() => {});
+        // Reset after 3s if no second tap
+        setTimeout(() => { tapped = false; video.pause(); }, 3000);
+      }
+      // Second tap: navigate (default behavior)
+    }, { passive: false });
+  });
 </script>
 </body>
 </html>

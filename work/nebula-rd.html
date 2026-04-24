@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nebula R&D · Chloe Ko</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="project.css">
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-brand">
+    <span class="name">Chloe Ko</span>
+    <span class="title">CG Generalist &amp; FX Artist</span>
+  </a>
+  <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navlinks">
+    <li><a href="../index.html">ShowReel</a></li>
+    <li><a href="../work.html" class="active">Work</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../resume.html">Resume</a></li>
+    <li><a href="../drawings.html">Drawings</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+  <div class="proj-hero">
+    <img src="../images/work/nebula-rd/nebulaebg.png" alt="Nebula R&D" class="proj-cover">
+    <div class="proj-hero-text">
+      <p class="proj-category">Houdini FX · R&amp;D</p>
+      <h1>Nebula R&amp;D</h1>
+    </div>
+  </div>
+
+  <div class="proj-body">
+    <div class="proj-meta">
+      <div class="meta-item"><span class="meta-label">Tools</span><span>Houdini, Redshift, Nuke, 3ds Max</span></div>
+      <div class="meta-item"><span class="meta-label">Type</span><span>Thesis Film R&amp;D</span></div>
+      <div class="meta-item"><span class="meta-label">Password</span><span><code style="color:var(--accent);font-size:0.85rem;">1103</code></span></div>
+    </div>
+
+    <div class="proj-text">
+      <p>Working on a nebula shot for my student thesis film. These are a bunch of my trials &amp; errors along the way. Please enjoy my tears ;)</p>
+    </div>
+
+    <div class="proj-gallery">
+      <img src="../images/work/nebula-rd/houdininebulae.png" alt="Houdini nebula setup">
+      <img src="../images/work/nebula-rd/KakaoTalk_20220912_151350284.png" alt="Particle test">
+    </div>
+
+    <div class="proj-text">
+      <h2>Approach 1 — Particles + Volume</h2>
+      <p>My first approach was to simulate with particle fluid, mesh to VDB, then combine both in comp to get a wispy, detailed look.</p>
+    </div>
+
+    <div class="proj-gallery single">
+      <img src="../images/work/nebula-rd/withvolume.png" alt="Little render test — stacking particles on low-res volume">
+    </div>
+
+    <div class="proj-gallery">
+      <img src="../images/work/nebula-rd/nebulaebg.png" alt="Nebula background render">
+      <img src="../images/work/nebula-rd/cam3.png" alt="Camera view">
+    </div>
+
+    <div class="proj-text">
+      <p>It looked nice, but the problem appeared in animation: weird clipping with particle geometry, and foreground particles looked very grainy close to camera.</p>
+    </div>
+
+    <div class="proj-text">
+      <h2>Approach 2 — Pure Volumes</h2>
+      <p>Second approach: no particles, just volumes distorted with heavily stacked noise.</p>
+    </div>
+
+    <div class="proj-gallery">
+      <img src="../images/work/nebula-rd/v04.png" alt="Volume test v04">
+      <img src="../images/work/nebula-rd/1213_Neb2.png" alt="Volume test Neb2">
+    </div>
+
+    <div class="proj-text">
+      <p>Still testing with the moving camera. Lighting and shading volumes was much harder than the particle-based method. Also testing the Axiom solver for volumes.</p>
+    </div>
+
+    <div class="proj-text" style="margin-top:2.5rem; padding-top:2rem; border-top:1px solid var(--fg3);">
+      <h2>Update</h2>
+    </div>
+
+    <!-- ptc.mp4 — particle test video -->
+    <div class="proj-video">
+      <div class="video-wrapper">
+        <video controls>
+          <source src="../images/work/nebula-rd/ptc.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="proj-gallery">
+      <img src="../images/work/nebula-rd/firsttry_PhysCamera002.png" alt="Test render — straight out of oven, sorry about lighting lol">
+      <img src="../images/work/nebula-rd/firsttry_PhysCamera001_02-13.png" alt="Lost in the weeds">
+    </div>
+
+    <div class="proj-text">
+      <p>I even tried to learn 3ds Max in 2 days because I wanted to try out the Krakatoa renderer from Thinkbox. Made a test in 3ds Max using FumeFX and Stoke, rendered with Krakatoa. Krakatoa was powerful for rendering billions of particles — but my RAM maxed out and I had multiple hard crashes (96GB). Went back to Houdini.</p>
+      <p>Fun experiment though! Reference that helped tremendously: <a href="https://www.vfxarabia.co/post/startrek-nebula-making-of" target="_blank">Star Trek Nebula Making-of — VFX Arabia</a>.</p>
+    </div>
+
+    <!-- Final nebula Vimeo (806150524) — password protected -->
+    <div class="proj-video">
+      <div class="video-wrapper">
+        <video controls>
+          <source src="../images/work/nebula-rd/Neb_SC01.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <div class="pw-note">Password: <code>1103</code></div>
+
+    <div class="proj-nav">
+      <a href="flower-rd.html" class="proj-back">← Flower R&amp;D</a>
+      <a href="lg-wonderbox-showcase-2022.html" class="proj-next">LG Wonderbox →</a>
+    </div>
+  </div>
+</div>
+<footer>&copy; 2024 Chloe Ko &nbsp;&middot;&nbsp; All rights reserved</footer>
+<script>
+  const ham = document.getElementById('ham');
+  const nav = document.getElementById('navlinks');
+  ham.addEventListener('click', () => nav.classList.toggle('open'));
+</script>
+</body>
+</html>

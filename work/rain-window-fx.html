@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rain on Window FX · Chloe Ko</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="project.css">
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-brand">
+    <span class="name">Chloe Ko</span>
+    <span class="title">CG Generalist &amp; FX Artist</span>
+  </a>
+  <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navlinks">
+    <li><a href="../index.html">ShowReel</a></li>
+    <li><a href="../work.html" class="active">Work</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../resume.html">Resume</a></li>
+    <li><a href="../drawings.html">Drawings</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+  <div class="proj-hero">
+    <img src="../images/work/rain-window-fx/KakaoTalk_20221031_003410951.png" alt="Rain on Window FX" class="proj-cover">
+    <div class="proj-hero-text">
+      <p class="proj-category">Houdini FX · R&amp;D</p>
+      <h1>Rain on Window FX</h1>
+    </div>
+  </div>
+
+  <div class="proj-body">
+    <div class="proj-meta">
+      <div class="meta-item"><span class="meta-label">Tools</span><span>Houdini</span></div>
+      <div class="meta-item"><span class="meta-label">Type</span><span>Personal R&amp;D</span></div>
+    </div>
+
+    <div class="proj-text">
+      <p>Rain effect in Houdini — without fluid simulation. A procedural approach to creating convincing rain droplets running down a window surface.</p>
+    </div>
+
+    <div class="proj-video">
+      <div class="video-wrapper">
+        <video controls>
+          <source src="../images/work/rain-window-fx/Rain1.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="proj-gallery single">
+      <img src="../images/work/rain-window-fx/KakaoTalk_20221031_003410951.png" alt="Rain on window still">
+    </div>
+
+    <div class="proj-nav">
+      <a href="kiss-product-viz.html" class="proj-back">← KISS Product Viz</a>
+      <a href="mwc-samsung-2022.html" class="proj-next">MWC Samsung 2022 →</a>
+    </div>
+  </div>
+</div>
+<footer>&copy; 2024 Chloe Ko &nbsp;&middot;&nbsp; All rights reserved</footer>
+<script>
+  const ham = document.getElementById('ham');
+  const nav = document.getElementById('navlinks');
+  ham.addEventListener('click', () => nav.classList.toggle('open'));
+</script>
+</body>
+</html>

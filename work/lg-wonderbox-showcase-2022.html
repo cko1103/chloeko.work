@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LG Wonderbox Showcase 2022 · Chloe Ko</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="project.css">
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-brand">
+    <span class="name">Chloe Ko</span>
+    <span class="title">CG Generalist &amp; FX Artist</span>
+  </a>
+  <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  <ul class="nav-links" id="navlinks">
+    <li><a href="../index.html">ShowReel</a></li>
+    <li><a href="../work.html" class="active">Work</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../resume.html">Resume</a></li>
+    <li><a href="../drawings.html">Drawings</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+  <div class="proj-hero">
+    <img src="../images/work/lg-wonderbox-showcase-2022/Final_undistorted_%280-00-07-27%29.png" alt="LG Wonderbox Showcase 2022" class="proj-cover">
+    <div class="proj-hero-text">
+      <p class="proj-category">Digital Art · Cinema4D · Houdini · Octane</p>
+      <h1>LG Wonderbox Showcase 2022</h1>
+    </div>
+  </div>
+
+  <div class="proj-body">
+    <div class="proj-meta">
+      <div class="meta-item"><span class="meta-label">Tools</span><span>Cinema4D, Houdini, Octane, Forester, X-Particles</span></div>
+      <div class="meta-item"><span class="meta-label">Award</span><span>Top 3 Finalist</span></div>
+      <div class="meta-item"><span class="meta-label">Venue</span><span>LG Times Square Billboard, NYC</span></div>
+    </div>
+
+    <div class="proj-text">
+      <p>I participated in a digital art contest called <strong>LG WonderBox Showcase</strong> and was lucky enough to be nominated as a top 3 finalist!</p>
+      <p>Made with Cinema4D, particles from Houdini, rendered in Octane (Forester and X-Particles plugins used). Houdini particle text morph using Vellum grain.</p>
+      <p>Never expected my work to be on a giant Times Square screen — it was amazing!</p>
+      <p><a href="https://www.lg.com/us/press-release/lg-electronics-announces-winners-inaugural-wonderbox-showcase-digital-art-competition" target="_blank">↗ Press Release</a></p>
+    </div>
+
+    <!-- FINAL.mp4 — main artwork video -->
+    <div class="proj-video">
+      <div class="video-wrapper">
+        <video controls>
+          <source src="../images/work/lg-wonderbox-showcase-2022/FINAL.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!-- ParticleMorph.mp4 — Houdini particle text morph -->
+    <div class="proj-video">
+      <p class="video-label">Houdini particle text morph — Vellum grain</p>
+      <div class="video-wrapper">
+        <video controls>
+          <source src="../images/work/lg-wonderbox-showcase-2022/ParticleMorph.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!-- Vimeo 782415409 — full submission / showcase reel -->
+    <div class="proj-video">
+      <p class="video-label">Full showcase submission</p>
+      <div class="video-wrapper">
+        <video controls>
+          <source src="../images/work/lg-wonderbox-showcase-2022/lg_wonderbox_2022.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="proj-gallery">
+      <img src="../images/work/lg-wonderbox-showcase-2022/KakaoTalk_20221219_002116399.jpg" alt="LG Times Square event 1">
+      <img src="../images/work/lg-wonderbox-showcase-2022/KakaoTalk_20221219_002116399_02.jpg" alt="LG Times Square event 2">
+    </div>
+
+    <div class="proj-gallery single">
+      <img src="../images/work/lg-wonderbox-showcase-2022/KakaoTalk_20221219_003316627.jpg" alt="LG Times Square event 3">
+    </div>
+
+    <div class="proj-text">
+      <p>Met wonderful people at the event and had a great time! The work was displayed on the Times Square screen through the end of the year.</p>
+    </div>
+
+    <div class="proj-nav">
+      <a href="nebula-rd.html" class="proj-back">← Nebula R&amp;D</a>
+      <a href="sk-ces-2022.html" class="proj-next">SK CES 2022 →</a>
+    </div>
+  </div>
+</div>
+<footer>&copy; 2024 Chloe Ko &nbsp;&middot;&nbsp; All rights reserved</footer>
+<script>
+  const ham = document.getElementById('ham');
+  const nav = document.getElementById('navlinks');
+  ham.addEventListener('click', () => nav.classList.toggle('open'));
+</script>
+</body>
+</html>

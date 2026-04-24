@@ -16,6 +16,7 @@
       display: flex;
       gap: 1rem;
       margin-bottom: 3rem;
+      flex-wrap: wrap;
     }
 
     .btn {
@@ -35,23 +36,11 @@
       color: var(--fg2);
       background: transparent;
     }
-    .btn:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-    .btn.primary {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-    .btn.primary:hover {
-      background: var(--accent);
-      color: var(--bg);
-    }
+    .btn:hover { border-color: var(--accent); color: var(--accent); }
+    .btn.primary { border-color: var(--accent); color: var(--accent); }
+    .btn.primary:hover { background: var(--accent); color: var(--bg); }
 
-    /* Resume sections */
-    .resume-section {
-      margin-bottom: 3.5rem;
-    }
+    .resume-section { margin-bottom: 3.5rem; }
 
     .resume-section-title {
       font-size: 0.65rem;
@@ -67,14 +56,15 @@
       display: grid;
       grid-template-columns: 160px 1fr;
       gap: 1.5rem;
-      margin-bottom: 2rem;
+      margin-bottom: 2.2rem;
     }
 
     .entry-date {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       color: var(--fg3);
       padding-top: 0.15rem;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
+      line-height: 1.5;
     }
 
     .entry-body h3 {
@@ -82,33 +72,25 @@
       font-size: 1.1rem;
       font-weight: 400;
       color: var(--fg);
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.2rem;
     }
 
     .entry-body .org {
       font-size: 0.75rem;
       color: var(--accent2);
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
       margin-bottom: 0.6rem;
     }
 
-    .entry-body p {
-      font-size: 0.85rem;
-      color: var(--fg2);
-      line-height: 1.7;
-    }
-
-    .entry-body ul {
-      list-style: none;
-      margin-top: 0.4rem;
-    }
+    .entry-body ul { list-style: none; }
     .entry-body ul li {
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       color: var(--fg2);
-      padding: 0.25rem 0;
+      padding: 0.3rem 0;
       display: flex;
       align-items: baseline;
-      gap: 0.5rem;
+      gap: 0.6rem;
+      line-height: 1.65;
     }
     .entry-body ul li::before {
       content: '—';
@@ -116,9 +98,39 @@
       flex-shrink: 0;
     }
 
-    .awards-list-resume {
-      list-style: none;
+    .project-link {
+      font-size: 0.7rem;
+      color: var(--accent2);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid var(--fg3);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
     }
+    .project-link:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .sub-project {
+      margin-top: 0.8rem;
+      padding-left: 1rem;
+      border-left: 1px solid var(--fg3);
+    }
+    .sub-project h4 {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--fg);
+      margin-bottom: 0.3rem;
+      letter-spacing: 0.02em;
+    }
+    .sub-project p {
+      font-size: 0.78rem;
+      color: var(--fg2);
+      line-height: 1.65;
+    }
+
+    .awards-list-resume { list-style: none; }
     .awards-list-resume li {
       font-size: 0.82rem;
       color: var(--fg2);
@@ -133,6 +145,25 @@
     .award-title-res { color: var(--fg); }
     .award-year-res { font-size: 0.7rem; color: var(--fg3); flex-shrink: 0; }
 
+    .skills-table { width: 100%; border-collapse: collapse; }
+    .skills-table tr { border-bottom: 1px solid var(--fg3); }
+    .skills-table tr:first-child { border-top: 1px solid var(--fg3); }
+    .skills-table td {
+      padding: 0.65rem 0;
+      font-size: 0.82rem;
+      vertical-align: top;
+    }
+    .skills-table td:first-child {
+      color: var(--fg3);
+      font-size: 0.68rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      width: 120px;
+      padding-right: 1rem;
+      padding-top: 0.75rem;
+    }
+    .skills-table td:last-child { color: var(--fg2); }
+
     @media (max-width: 600px) {
       .resume-layout { padding: 0 1.5rem 3rem; }
       .resume-entry { grid-template-columns: 1fr; gap: 0.4rem; }
@@ -145,7 +176,7 @@
 <nav>
   <a href="index.html" class="nav-brand">
     <span class="name">Chloe Ko</span>
-    <span class="title">FX Artist &amp; 3D Motion Designer</span>
+    <span class="title">CG Generalist &amp; FX Artist</span>
   </a>
   <button class="hamburger" id="ham" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -166,13 +197,8 @@
 
   <div class="resume-layout">
     <div class="resume-actions">
-      <!-- Replace href with your actual PDF resume path -->
-      <a href="files/chloe-ko-resume.pdf" class="btn primary" download>
-        ↓ Download PDF
-      </a>
-      <a href="mailto:hello@chloeko.com" class="btn">
-        Contact Me
-      </a>
+      <a href="files/chloe-ko-resume.pdf" class="btn primary" download>↓ Download PDF</a>
+      <a href="mailto:chloeko.work@gmail.com" class="btn">chloeko.work@gmail.com</a>
     </div>
 
     <!-- EXPERIENCE -->
@@ -180,45 +206,101 @@
       <p class="resume-section-title">Experience</p>
 
       <div class="resume-entry">
-        <span class="entry-date">2023 — Present</span>
+        <span class="entry-date">Feb 2024 — Present</span>
         <div class="entry-body">
-          <h3>Freelance FX Artist &amp; Motion Designer</h3>
-          <p class="org">New York, NY</p>
+          <h3>Computer Graphics Generalist</h3>
+          <p class="org">Boyang Trading Co., LTD &nbsp;·&nbsp; Maywood, NJ</p>
           <ul>
-            <li>Houdini FX simulation and VFX for commercial clients</li>
-            <li>Cinema 4D motion graphics and product visualization</li>
-            <li>Art direction and creative consulting</li>
+            <li>Led end-to-end product design, website management, and brand visual production.</li>
           </ul>
         </div>
       </div>
 
-      <!-- Add more experience entries as needed -->
-      <!-- Example:
       <div class="resume-entry">
-        <span class="entry-date">2021 — 2023</span>
+        <span class="entry-date">Mar – May 2024</span>
         <div class="entry-body">
-          <h3>Studio Name</h3>
-          <p class="org">Job Title · City</p>
+          <h3>Part-Time Computer Graphics Designer</h3>
+          <p class="org">IsharingSoft Inc &nbsp;·&nbsp; Remote</p>
           <ul>
-            <li>Description of work</li>
+            <li>Boosted app visibility and sales by designing App Store preview images and ad banners.</li>
+            <li>Localized content into multiple languages to enhance global reach.</li>
           </ul>
         </div>
       </div>
-      -->
-    </div>
-
-    <!-- EDUCATION -->
-    <div class="resume-section">
-      <p class="resume-section-title">Education</p>
 
       <div class="resume-entry">
-        <span class="entry-date">2019 — 2023</span>
+        <span class="entry-date">Oct 2023 – Feb 2024</span>
         <div class="entry-body">
-          <h3>BFA Computer Art</h3>
-          <p class="org">School of Visual Arts · New York, NY</p>
+          <h3>Freelance 3D Motion Designer</h3>
+          <p class="org">KISS Products Inc &nbsp;·&nbsp; New York, NY</p>
           <ul>
-            <li>Specialization in 3D FX and motion graphics</li>
-            <li>Thesis Film: <em>Cycle</em> — Film of Distinction 2023</li>
+            <li>Led cosmetic product visualization from scratch, transforming creative concepts into compelling animations that amplified brand identity and engagement.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="resume-entry">
+        <span class="entry-date">Jul – Sep 2023</span>
+        <div class="entry-body">
+          <h3>FX Intern</h3>
+          <p class="org">Framestore &nbsp;·&nbsp; New York, NY</p>
+          <ul>
+            <li>Contributed to high-profile projects applying Houdini FX skills in visual content creation, including particles, smoke, and rigid body dynamics simulations.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="resume-entry">
+        <span class="entry-date">Jun – Jul 2023</span>
+        <div class="entry-body">
+          <h3>FX Intern</h3>
+          <p class="org">Free Range VFX &nbsp;·&nbsp; New York, NY</p>
+          <ul>
+            <li>Developed procedural Vellum simulations for a teaser featured in <em>American Horror Story</em> Season 12.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="resume-entry">
+        <span class="entry-date">Jun 2021 – Jun 2022</span>
+        <div class="entry-body">
+          <h3>3D Motion Designer</h3>
+          <p class="org">DaamDaam Samuso &nbsp;·&nbsp; South Korea</p>
+
+          <div class="sub-project">
+            <h4>SK CES 2022</h4>
+            <p>R&amp;D in Houdini for concept visualization; designed particle simulations for an interactive eco-tech experience. Configured projection mapping and camera setups in 3D space.</p>
+          </div>
+          <div class="sub-project">
+            <h4>Samsung MWC 2022</h4>
+            <p>Designed scene setup and 3D motion graphics for an anamorphic effect video using three-sided projection mapping at the Samsung Electronics entrance. Animated products for the Galaxy series launch.</p>
+          </div>
+          <div class="sub-project">
+            <h4>Samsung Engineering — Engium</h4>
+            <p>Developed promotional content for Samsung Engineering's "Tech Zone," synchronizing transparent OLED displays on a robotic arm with a wall display.</p>
+          </div>
+          <div class="sub-project">
+            <h4>LG Display Magok Showroom — Welcome Zone</h4>
+            <p>Created particle simulation with X-Particles in Cinema 4D, seamlessly integrated with live-action footage.</p>
+          </div>
+          <div class="sub-project">
+            <h4>LOTTE Academy Osan Campus</h4>
+            <p>Configured 3D setups for projecting content on scale models of Lotte's global landmarks; designed animations for wall and model projections.</p>
+          </div>
+          <div class="sub-project">
+            <h4>LG U+ Virtual Office</h4>
+            <p>Designed a virtual office space and performed rigging and avatar animation for a metaverse concept.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="resume-entry">
+        <span class="entry-date">Jun – Aug 2020</span>
+        <div class="entry-body">
+          <h3>Motion Design Intern</h3>
+          <p class="org">Co_ed Studios &nbsp;·&nbsp; New York, NY</p>
+          <ul>
+            <li>3D modeling for a Crystal Geyser commercial; produced 2D text motion graphics in After Effects for a TED Talk intro. <a href="https://vimeo.com/821462075" class="project-link" target="_blank">↗ Vimeo</a></li>
           </ul>
         </div>
       </div>
@@ -228,6 +310,10 @@
     <div class="resume-section">
       <p class="resume-section-title">Awards &amp; Recognition</p>
       <ul class="awards-list-resume">
+        <li>
+          <span><span class="award-title-res">Finalist</span> — LG Wonderbox Showcase, artwork on LG's Times Square billboard</span>
+          <span class="award-year-res">2022</span>
+        </li>
         <li>
           <span><span class="award-title-res">Film of Distinction</span> — BFA Computer Art, School of Visual Arts</span>
           <span class="award-year-res">2023</span>
@@ -253,6 +339,10 @@
           <span class="award-year-res">2023</span>
         </li>
         <li>
+          <span><span class="award-title-res">Official Selection</span> — Experimental, Dance &amp; Music Film Festival</span>
+          <span class="award-year-res">2023</span>
+        </li>
+        <li>
           <span><span class="award-title-res">Official Selection</span> — Cortoons Festival Gandia</span>
           <span class="award-year-res">2023</span>
         </li>
@@ -263,30 +353,50 @@
       </ul>
     </div>
 
+    <!-- EDUCATION -->
+    <div class="resume-section">
+      <p class="resume-section-title">Education</p>
+      <div class="resume-entry">
+        <span class="entry-date">Sep 2018 – May 2023</span>
+        <div class="entry-body">
+          <h3>BFA Computer Arts &amp; Visual Effects</h3>
+          <p class="org">School of Visual Arts &nbsp;·&nbsp; New York, NY</p>
+          <ul>
+            <li>Thesis Film <em>"Cycle"</em> — Film of Distinction 2023, Best VFX (CTAF), multiple festival selections</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <!-- SKILLS -->
     <div class="resume-section">
-      <p class="resume-section-title">Technical Skills</p>
-      <div class="resume-entry">
-        <span class="entry-date">Software</span>
-        <div class="entry-body">
-          <ul>
-            <li>Houdini, Cinema 4D, Redshift, Nuke</li>
-            <li>After Effects, Premiere Pro</li>
-            <li>Photoshop, Illustrator</li>
-          </ul>
-        </div>
-      </div>
-      <div class="resume-entry">
-        <span class="entry-date">Disciplines</span>
-        <div class="entry-body">
-          <ul>
-            <li>FX Simulation (fluid, smoke, destruction, particles)</li>
-            <li>3D Motion Graphics &amp; Product Visualization</li>
-            <li>Compositing &amp; VFX Integration</li>
-            <li>Art Direction &amp; Graphic Design</li>
-          </ul>
-        </div>
-      </div>
+      <p class="resume-section-title">Skills</p>
+      <table class="skills-table">
+        <tr>
+          <td>CG &amp; VFX</td>
+          <td>Houdini FX, Cinema 4D, Maya, Nuke</td>
+        </tr>
+        <tr>
+          <td>Design</td>
+          <td>Adobe Suite (Photoshop, Illustrator, After Effects, Premiere Pro), Figma</td>
+        </tr>
+        <tr>
+          <td>Rendering</td>
+          <td>Redshift, Octane, Arnold</td>
+        </tr>
+        <tr>
+          <td>Technical</td>
+          <td>Houdini VEX, Python, HTML, CSS, Shopify Liquid</td>
+        </tr>
+        <tr>
+          <td>OS</td>
+          <td>Windows, Mac, Linux</td>
+        </tr>
+        <tr>
+          <td>Language</td>
+          <td>Korean, English, Japanese</td>
+        </tr>
+      </table>
     </div>
   </div>
 </div>
