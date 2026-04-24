@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Chloe Ko</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .about-layout {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 3rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .about-photo {
+      position: sticky;
+      top: calc(var(--nav-h) + 2rem);
+    }
+
+    .about-photo img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      filter: grayscale(20%) brightness(0.9);
+      display: block;
+    }
+
+    .about-photo-caption {
+      margin-top: 1rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--fg3);
+    }
+
+    .about-text h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 2rem;
+    }
+
+    .about-text h2 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .about-text p {
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: var(--fg2);
+      margin-bottom: 1.2rem;
+    }
+
+    .about-text p strong {
+      color: var(--fg);
+      font-weight: 400;
+    }
+
+    .skills-block {
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--fg3);
+    }
+
+    .skills-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 1.2rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem 2rem;
+    }
+
+    .skill-item {
+      font-size: 0.8rem;
+      color: var(--fg2);
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--fg3);
+      letter-spacing: 0.02em;
+    }
+
+    .contact-block {
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--fg3);
+    }
+
+    .contact-block p {
+      font-size: 0.85rem;
+      color: var(--fg2);
+      margin-bottom: 1rem;
+    }
+
+    .contact-link {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent2);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .contact-link:hover {
+      color: var(--fg);
+      border-color: var(--fg);
+    }
+
+    @media (max-width: 768px) {
+      .about-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 0 1.5rem 3rem;
+      }
+      .about-photo { position: static; }
+      .about-photo img { aspect-ratio: 1/1; }
+      .skills-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">
+    <span class="name">Chloe Ko</span>
+    <span class="title">FX Artist &amp; 3D Motion Designer</span>
+  </a>
+  <button class="hamburger" id="ham" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navlinks">
+    <li><a href="index.html">ShowReel</a></li>
+    <li><a href="work.html">Work</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="drawings.html">Drawings</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+  <div class="page-header">
+    <h1>About</h1>
+  </div>
+
+  <div class="about-layout">
+    <div class="about-photo">
+      <!-- Replace with your actual photo path -->
+      <img src="images/about/profile.jpg" alt="Chloe Ko"
+           onerror="this.style.background='#1a1a1a'; this.removeAttribute('onerror')">
+      <p class="about-photo-caption">Chloe Ko, New York</p>
+    </div>
+
+    <div class="about-text">
+      <h2>Hello, I'm <em>Chloe</em>.</h2>
+
+      <p>
+        I consider myself a <strong>CG generalist</strong> specializing in
+        <strong>Houdini FX</strong> and <strong>Cinema 4D</strong> motion graphics.
+      </p>
+
+      <p>
+        My work lives at the intersection of simulation, storytelling, and craft —
+        from large-scale environmental FX to product visualization and broadcast design.
+      </p>
+
+      <p>
+        If you'd like to work together, feel free to reach out!
+      </p>
+
+      <div class="skills-block">
+        <p class="skills-label">Skills &amp; Tools</p>
+        <div class="skills-grid">
+          <span class="skill-item">Houdini FX</span>
+          <span class="skill-item">Cinema 4D</span>
+          <span class="skill-item">Redshift</span>
+          <span class="skill-item">Nuke</span>
+          <span class="skill-item">Motion Design</span>
+          <span class="skill-item">Graphic Design</span>
+          <span class="skill-item">Art Direction</span>
+          <span class="skill-item">Web Design</span>
+          <span class="skill-item">Photo / Video</span>
+          <span class="skill-item">After Effects</span>
+        </div>
+      </div>
+
+      <div class="contact-block">
+        <p class="skills-label">Contact</p>
+        <p>Available for freelance and full-time opportunities.</p>
+        <!-- Replace with your actual email -->
+        <a href="mailto:hello@chloeko.com" class="contact-link">hello@chloeko.com</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2024 Chloe Ko &nbsp;&middot;&nbsp; All rights reserved
+</footer>
+
+<script>
+  const ham = document.getElementById('ham');
+  const nav = document.getElementById('navlinks');
+  ham.addEventListener('click', () => nav.classList.toggle('open'));
+</script>
+</body>
+</html>

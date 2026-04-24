@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work — Chloe Ko</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1px;
+      background: var(--fg3);
+      border-top: 1px solid var(--fg3);
+      border-bottom: 1px solid var(--fg3);
+    }
+
+    .work-item {
+      position: relative;
+      overflow: hidden;
+      background: var(--bg);
+      aspect-ratio: 16/10;
+      display: block;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .work-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease, filter 0.5s ease;
+      filter: brightness(0.75) saturate(0.8);
+    }
+
+    .work-item:hover img {
+      transform: scale(1.04);
+      filter: brightness(0.55) saturate(0.6);
+    }
+
+    .work-item-info {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+    }
+
+    .work-item-title {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: var(--fg);
+      letter-spacing: 0.01em;
+      transform: translateY(4px);
+      transition: transform 0.3s;
+    }
+
+    .work-item:hover .work-item-title {
+      transform: translateY(0);
+    }
+
+    .work-item-arrow {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      width: 28px; height: 28px;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .work-item-arrow svg { width: 12px; height: 12px; }
+    .work-item:hover .work-item-arrow {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* No image fallback */
+    .work-item.no-img {
+      background: var(--bg2);
+    }
+    .work-item.no-img .work-item-info {
+      justify-content: center;
+      align-items: center;
+      background: none;
+    }
+    .work-item.no-img .work-item-title {
+      text-align: center;
+    }
+
+    .content-wrap { max-width: 1400px; margin: 0 auto; }
+
+    @media (max-width: 600px) {
+      .work-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">
+    <span class="name">Chloe Ko</span>
+    <span class="title">FX Artist &amp; 3D Motion Designer</span>
+  </a>
+  <button class="hamburger" id="ham" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navlinks">
+    <li><a href="index.html">ShowReel</a></li>
+    <li><a href="work.html" class="active">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="drawings.html">Drawings</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+  <div class="page-header">
+    <h1>Work</h1>
+  </div>
+
+  <div class="content-wrap">
+    <div class="work-grid">
+
+      <!-- Each work item: replace href with your detail page, src with your image -->
+
+      <a class="work-item" href="work/vanessa-hair-vibeswap.html">
+        <img src="images/work/vanessa-hair-vibeswap.jpg" alt="Vanessa Hair - VibeSwap"
+             onerror="this.style.display='none'">
+        <div class="work-item-info">
+          <div class="work-item-title">Vanessa Hair — VibeSwap</div>
+        </div>
+        <div class="work-item-arrow">
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </a>
+
+      <a class="work-item" href="work/flower-rd.html">
+        <img src="images/work/flower-rd.jpg" alt="Flower R&D"
+             onerror="this.style.display='none'">
+        <div class="work-item-info">
+          <div class="work-item-title">Flower R&amp;D</div>
+        </div>
+        <div class="work-item-arrow">
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </a>
+
+      <a class="work-item" href="work/nebula-rd.html">
+        <img src="images/work/nebula-rd.jpg" alt="Nebula R&D"
+             onerror="this.style.display='none'">
+        <div class="work-item-info">
+          <div class="work-item-title">Nebula R&amp;D</div>
+        </div>
+        <div class="work-item-arrow">
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </a>
+
+      <a class="work-item" href="work/lg-wonderbox.html">
+        <img src="images/work/lg-wonderbox.jpg" alt="LG Wonderbox Showcase 2022"
+             onerror="this.style.display='none'">
+        <div class="work-item-info">
+          <div class="work-item-title">LG Wonderbox Showcase 2022</div>
+        </div>
+        <div class="work-item-arrow">
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </a>
+
+      <a class="work-item" href="work/sk-ces-2022.html">
+        <img src="images/work/sk-ces-2022.jpg" alt="SK CES 2022"
+             onerror="this.style.display='none'">
+        <div class="work-item-info">
+          <div class="work-item-title">SK CES 2022</div>
+        </div>
+        <div class="work-item-arrow">
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </a>
+
+      <a class="work-item" href="work/kiss-press-go.html">
+        <img src="images/work/kiss-press-go.jpg" alt="KISS Press&Go Lashes"
+             onerror="this.style.display='none'">
+        <div class="work-item-info">
+          <div class="work-item-title">KISS Press&amp;Go Lashes</div>
+        </div>
+        <div class="work-item-arrow">
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </a>
+
+      <a class="work-item" href="work/kiss-product-viz.html">
+        <img src="images/work/kiss-product-viz.jpg" alt="KISS Product Visualization"
+             onerror="this.style.display='none'">
+        <div class="work-item-info">
+          <div class="work-item-title">KISS Product Visualization</div>
+        </div>
+        <div class="work-item-arrow">
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </a>
+
+      <a class="work-item" href="work/rain-window-fx.html">
+        <img src="images/work/rain-window-fx.jpg" alt="Rain on window FX"
+             onerror="this.style.display='none'">
+        <div class="work-item-info">
+          <div class="work-item-title">Rain on Window FX</div>
+        </div>
+        <div class="work-item-arrow">
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </a>
+
+      <a class="work-item" href="work/mwc-samsung-2022.html">
+        <img src="images/work/mwc-samsung-2022.jpg" alt="MWC Samsung 2022"
+             onerror="this.style.display='none'">
+        <div class="work-item-info">
+          <div class="work-item-title">MWC Samsung 2022</div>
+        </div>
+        <div class="work-item-arrow">
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </a>
+
+      <a class="work-item" href="work/kiss-joah-mascara.html">
+        <img src="images/work/kiss-joah-mascara.jpg" alt="KISS JOAH High Roller Mascara"
+             onerror="this.style.display='none'">
+        <div class="work-item-info">
+          <div class="work-item-title">KISS JOAH — High Roller Mascara</div>
+        </div>
+        <div class="work-item-arrow">
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </a>
+
+      <a class="work-item" href="work/samsung-engineering.html">
+        <img src="images/work/samsung-engineering.jpg" alt="Samsung Engineering"
+             onerror="this.style.display='none'">
+        <div class="work-item-info">
+          <div class="work-item-title">Samsung Engineering</div>
+        </div>
+        <div class="work-item-arrow">
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </a>
+
+      <a class="work-item" href="work/lg-u-virtual-office.html">
+        <img src="images/work/lg-u-virtual-office.jpg" alt="LG U+ Virtual Office"
+             onerror="this.style.display='none'">
+        <div class="work-item-info">
+          <div class="work-item-title">LG U+ Virtual Office</div>
+        </div>
+        <div class="work-item-arrow">
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 10L10 2M10 2H4M10 2V8" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2024 Chloe Ko &nbsp;&middot;&nbsp; All rights reserved
+</footer>
+
+<script>
+  const ham = document.getElementById('ham');
+  const nav = document.getElementById('navlinks');
+  ham.addEventListener('click', () => nav.classList.toggle('open'));
+</script>
+</body>
+</html>

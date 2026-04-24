@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chloe Ko — FX Artist & 3D Motion Designer</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* HERO */
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 40%, #1a1510 0%, #0a0a0a 70%);
+    }
+
+    /* Grain overlay */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.2s forwards;
+    }
+
+    .hero-name {
+      font-family: var(--serif);
+      font-size: clamp(4rem, 10vw, 8rem);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 0.9;
+      color: var(--fg);
+      opacity: 0;
+      animation: fadeUp 0.8s 0.4s forwards;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      margin-top: 1.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--fg2);
+      font-weight: 400;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.6s forwards;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 1s forwards;
+    }
+    .hero-scroll span {
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--fg3);
+    }
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--accent2), transparent);
+      animation: scrollPulse 1.8s ease-in-out infinite;
+    }
+
+    /* SHOWREEL SECTION */
+    .showreel-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 3rem;
+    }
+
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 1.5rem;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      background: var(--bg2);
+      border: 1px solid var(--fg3);
+    }
+
+    .video-wrapper iframe,
+    .video-wrapper video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* THESIS SECTION */
+    .thesis-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 3rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .thesis-meta h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .thesis-meta .year {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 0.5rem;
+    }
+
+    .thesis-meta p {
+      color: var(--fg2);
+      font-size: 0.9rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .awards-list {
+      list-style: none;
+      margin-top: 2rem;
+    }
+    .awards-list li {
+      font-size: 0.75rem;
+      color: var(--fg2);
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--fg3);
+      letter-spacing: 0.03em;
+    }
+    .awards-list li:first-child { border-top: 1px solid var(--fg3); }
+    .awards-list .award-name {
+      color: var(--fg);
+      font-weight: 400;
+    }
+
+    .thesis-video .video-wrapper { background: #111; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.4; transform: scaleY(1); }
+      50%       { opacity: 1;   transform: scaleY(1.15); }
+    }
+
+    @media (max-width: 768px) {
+      .showreel-section,
+      .thesis-section { padding: 2rem 1.5rem; }
+      .thesis-section { grid-template-columns: 1fr; gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">
+    <span class="name">Chloe Ko</span>
+    <span class="title">FX Artist &amp; 3D Motion Designer</span>
+  </a>
+  <button class="hamburger" id="ham" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navlinks">
+    <li><a href="index.html" class="active">ShowReel</a></li>
+    <li><a href="work.html">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="drawings.html">Drawings</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Portfolio</p>
+    <h1 class="hero-name">Chloe <em>Ko</em></h1>
+    <p class="hero-sub">FX Artist &nbsp;&middot;&nbsp; 3D Motion Designer</p>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- SHOWREEL -->
+<section class="showreel-section">
+  <p class="section-label">ShowReel 2024</p>
+  <!-- Replace the src below with your actual Vimeo/YouTube embed URL -->
+  <div class="video-wrapper">
+    <iframe
+      src="https://player.vimeo.com/video/YOUR_VIMEO_ID?autoplay=0&title=0&byline=0&portrait=0"
+      frameborder="0"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen
+      title="Chloe Ko ShowReel">
+    </iframe>
+  </div>
+  <p style="margin-top:1rem; font-size:0.75rem; color:var(--fg2); font-style:italic;">
+    Breakdowns for individual works are available on the Work tab.
+  </p>
+</section>
+
+<!-- THESIS -->
+<section class="thesis-section">
+  <div class="thesis-meta">
+    <p class="year">Student Thesis Film · 2023</p>
+    <h2>"Cycle"</h2>
+    <p>
+      Somewhere in the vast universe, a supernova explosion occurs. An asteroid from the explosion lands on a nearby planet, triggering new life on it.
+    </p>
+    <p>
+      Inspired by the idea that we are all children of the stars — life cycles through the universe. Created entirely using <strong>Houdini</strong>, <strong>Redshift</strong>, and <strong>Nuke</strong>.
+    </p>
+    <p style="font-size:0.75rem; color:var(--fg2);">Password: <code style="background:var(--bg2); padding:2px 6px; letter-spacing:0.05em; color:var(--accent);">1103</code></p>
+
+    <ul class="awards-list">
+      <li><span class="award-name">Film of Distinction 2023</span> — BFA Computer Art, School of Visual Arts</li>
+      <li><span class="award-name">Excellence Award &amp; Draft Selection</span> — The Rookie Awards 2023</li>
+      <li><span class="award-name">Rank A</span> — The Rookie Awards 2023 Official Industry Ranking</li>
+      <li><span class="award-name">Best VFX</span> — Crazy Talented Asian and Friends (CTAF)</li>
+      <li><span class="award-name">Semi-Finalist</span> — New York Animation Film Awards (NYAFA)</li>
+      <li><span class="award-name">Official Selection</span> — Style, Experimental, Fashion Film Festival 2023</li>
+      <li><span class="award-name">Official Selection</span> — Experimental, Dance &amp; Music Film Festival 2023</li>
+      <li><span class="award-name">Official Selection</span> — Cortoons Festival Gandia 2023</li>
+      <li><span class="award-name">Official Selection</span> — ASIFA-East Animation Festival</li>
+    </ul>
+  </div>
+
+  <div class="thesis-video">
+    <div class="video-wrapper">
+      <!-- Replace with your Cycle thesis film embed URL -->
+      <iframe
+        src="https://player.vimeo.com/video/YOUR_CYCLE_VIDEO_ID?title=0&byline=0&portrait=0"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+        title="Cycle Thesis Film">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2024 Chloe Ko &nbsp;&middot;&nbsp; All rights reserved
+</footer>
+
+<script>
+  const ham = document.getElementById('ham');
+  const nav = document.getElementById('navlinks');
+  ham.addEventListener('click', () => nav.classList.toggle('open'));
+</script>
+</body>
+</html>

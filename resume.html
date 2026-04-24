@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume — Chloe Ko</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .resume-layout {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 3rem 5rem;
+    }
+
+    .resume-actions {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.4rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-family: var(--sans);
+      font-weight: 400;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 1px solid var(--fg3);
+      color: var(--fg2);
+      background: transparent;
+    }
+    .btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .btn.primary {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .btn.primary:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    /* Resume sections */
+    .resume-section {
+      margin-bottom: 3.5rem;
+    }
+
+    .resume-section-title {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--fg3);
+    }
+
+    .resume-entry {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .entry-date {
+      font-size: 0.75rem;
+      color: var(--fg3);
+      padding-top: 0.15rem;
+      letter-spacing: 0.05em;
+    }
+
+    .entry-body h3 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--fg);
+      margin-bottom: 0.25rem;
+    }
+
+    .entry-body .org {
+      font-size: 0.75rem;
+      color: var(--accent2);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.6rem;
+    }
+
+    .entry-body p {
+      font-size: 0.85rem;
+      color: var(--fg2);
+      line-height: 1.7;
+    }
+
+    .entry-body ul {
+      list-style: none;
+      margin-top: 0.4rem;
+    }
+    .entry-body ul li {
+      font-size: 0.8rem;
+      color: var(--fg2);
+      padding: 0.25rem 0;
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+    .entry-body ul li::before {
+      content: '—';
+      color: var(--fg3);
+      flex-shrink: 0;
+    }
+
+    .awards-list-resume {
+      list-style: none;
+    }
+    .awards-list-resume li {
+      font-size: 0.82rem;
+      color: var(--fg2);
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--fg3);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+    .awards-list-resume li:first-child { border-top: 1px solid var(--fg3); }
+    .award-title-res { color: var(--fg); }
+    .award-year-res { font-size: 0.7rem; color: var(--fg3); flex-shrink: 0; }
+
+    @media (max-width: 600px) {
+      .resume-layout { padding: 0 1.5rem 3rem; }
+      .resume-entry { grid-template-columns: 1fr; gap: 0.4rem; }
+      .entry-date { padding-top: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">
+    <span class="name">Chloe Ko</span>
+    <span class="title">FX Artist &amp; 3D Motion Designer</span>
+  </a>
+  <button class="hamburger" id="ham" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navlinks">
+    <li><a href="index.html">ShowReel</a></li>
+    <li><a href="work.html">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="resume.html" class="active">Resume</a></li>
+    <li><a href="drawings.html">Drawings</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+  <div class="page-header">
+    <h1>Resume</h1>
+  </div>
+
+  <div class="resume-layout">
+    <div class="resume-actions">
+      <!-- Replace href with your actual PDF resume path -->
+      <a href="files/chloe-ko-resume.pdf" class="btn primary" download>
+        ↓ Download PDF
+      </a>
+      <a href="mailto:hello@chloeko.com" class="btn">
+        Contact Me
+      </a>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="resume-section">
+      <p class="resume-section-title">Experience</p>
+
+      <div class="resume-entry">
+        <span class="entry-date">2023 — Present</span>
+        <div class="entry-body">
+          <h3>Freelance FX Artist &amp; Motion Designer</h3>
+          <p class="org">New York, NY</p>
+          <ul>
+            <li>Houdini FX simulation and VFX for commercial clients</li>
+            <li>Cinema 4D motion graphics and product visualization</li>
+            <li>Art direction and creative consulting</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Add more experience entries as needed -->
+      <!-- Example:
+      <div class="resume-entry">
+        <span class="entry-date">2021 — 2023</span>
+        <div class="entry-body">
+          <h3>Studio Name</h3>
+          <p class="org">Job Title · City</p>
+          <ul>
+            <li>Description of work</li>
+          </ul>
+        </div>
+      </div>
+      -->
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="resume-section">
+      <p class="resume-section-title">Education</p>
+
+      <div class="resume-entry">
+        <span class="entry-date">2019 — 2023</span>
+        <div class="entry-body">
+          <h3>BFA Computer Art</h3>
+          <p class="org">School of Visual Arts · New York, NY</p>
+          <ul>
+            <li>Specialization in 3D FX and motion graphics</li>
+            <li>Thesis Film: <em>Cycle</em> — Film of Distinction 2023</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- AWARDS -->
+    <div class="resume-section">
+      <p class="resume-section-title">Awards &amp; Recognition</p>
+      <ul class="awards-list-resume">
+        <li>
+          <span><span class="award-title-res">Film of Distinction</span> — BFA Computer Art, School of Visual Arts</span>
+          <span class="award-year-res">2023</span>
+        </li>
+        <li>
+          <span><span class="award-title-res">Excellence Award &amp; Draft Selection</span> — The Rookie Awards</span>
+          <span class="award-year-res">2023</span>
+        </li>
+        <li>
+          <span><span class="award-title-res">Rank A</span> — The Rookie Awards Official Industry Ranking Certificate</span>
+          <span class="award-year-res">2023</span>
+        </li>
+        <li>
+          <span><span class="award-title-res">Best VFX</span> — Crazy Talented Asian and Friends (CTAF)</span>
+          <span class="award-year-res">2023</span>
+        </li>
+        <li>
+          <span><span class="award-title-res">Semi-Finalist</span> — New York Animation Film Awards (NYAFA)</span>
+          <span class="award-year-res">2023</span>
+        </li>
+        <li>
+          <span><span class="award-title-res">Official Selection</span> — Style, Experimental, Fashion Film Festival</span>
+          <span class="award-year-res">2023</span>
+        </li>
+        <li>
+          <span><span class="award-title-res">Official Selection</span> — Cortoons Festival Gandia</span>
+          <span class="award-year-res">2023</span>
+        </li>
+        <li>
+          <span><span class="award-title-res">Official Selection</span> — ASIFA-East Animation Festival</span>
+          <span class="award-year-res">2023</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="resume-section">
+      <p class="resume-section-title">Technical Skills</p>
+      <div class="resume-entry">
+        <span class="entry-date">Software</span>
+        <div class="entry-body">
+          <ul>
+            <li>Houdini, Cinema 4D, Redshift, Nuke</li>
+            <li>After Effects, Premiere Pro</li>
+            <li>Photoshop, Illustrator</li>
+          </ul>
+        </div>
+      </div>
+      <div class="resume-entry">
+        <span class="entry-date">Disciplines</span>
+        <div class="entry-body">
+          <ul>
+            <li>FX Simulation (fluid, smoke, destruction, particles)</li>
+            <li>3D Motion Graphics &amp; Product Visualization</li>
+            <li>Compositing &amp; VFX Integration</li>
+            <li>Art Direction &amp; Graphic Design</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2024 Chloe Ko &nbsp;&middot;&nbsp; All rights reserved
+</footer>
+
+<script>
+  const ham = document.getElementById('ham');
+  const nav = document.getElementById('navlinks');
+  ham.addEventListener('click', () => nav.classList.toggle('open'));
+</script>
+</body>
+</html>

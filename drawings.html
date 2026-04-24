@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drawings — Chloe Ko</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .drawings-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 3rem 5rem;
+      columns: 3 280px;
+      column-gap: 2px;
+    }
+
+    .drawing-item {
+      break-inside: avoid;
+      margin-bottom: 2px;
+      position: relative;
+      overflow: hidden;
+      display: block;
+      cursor: zoom-in;
+    }
+
+    .drawing-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.4s ease, filter 0.4s ease;
+      filter: brightness(0.9);
+    }
+
+    .drawing-item:hover img {
+      transform: scale(1.03);
+      filter: brightness(1);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.93);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .lightbox.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      transform: scale(0.95);
+      transition: transform 0.3s;
+    }
+    .lightbox.open img { transform: scale(1); }
+
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem; right: 1.5rem;
+      background: none;
+      border: none;
+      color: var(--fg2);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+    .lightbox-close:hover { color: var(--fg); }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: 1px solid var(--fg3);
+      color: var(--fg2);
+      width: 40px; height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 1rem;
+    }
+    .lightbox-nav:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .lightbox-nav.prev { left: 1.5rem; }
+    .lightbox-nav.next { right: 1.5rem; }
+
+    .empty-state {
+      text-align: center;
+      padding: 5rem 3rem;
+      color: var(--fg3);
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 600px) {
+      .drawings-grid {
+        columns: 2 140px;
+        padding: 0 1rem 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">
+    <span class="name">Chloe Ko</span>
+    <span class="title">FX Artist &amp; 3D Motion Designer</span>
+  </a>
+  <button class="hamburger" id="ham" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navlinks">
+    <li><a href="index.html">ShowReel</a></li>
+    <li><a href="work.html">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="drawings.html" class="active">Drawings</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+  <div class="page-header">
+    <h1>Drawings</h1>
+  </div>
+
+  <div class="drawings-grid" id="gallery">
+    <!--
+      Add your drawing images here. Example:
+
+      <div class="drawing-item" data-src="images/drawings/drawing-01.jpg">
+        <img src="images/drawings/drawing-01.jpg" alt="Drawing 01" loading="lazy">
+      </div>
+
+      Replace the src values with your actual image paths.
+      Images go in: images/drawings/
+    -->
+
+    <!-- PLACEHOLDER: Remove this and add your actual drawings above -->
+    <div style="column-span: all; text-align: center; padding: 4rem 0; color: var(--fg3); font-size: 0.8rem; letter-spacing: 0.08em;">
+      Add your drawings to <code style="color: var(--accent2);">images/drawings/</code> and update the markup above.
+    </div>
+
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lbClose">&#215;</button>
+  <button class="lightbox-nav prev" id="lbPrev">&#8592;</button>
+  <img src="" alt="" id="lbImg">
+  <button class="lightbox-nav next" id="lbNext">&#8594;</button>
+</div>
+
+<footer>
+  &copy; 2024 Chloe Ko &nbsp;&middot;&nbsp; All rights reserved
+</footer>
+
+<script>
+  // Nav hamburger
+  const ham = document.getElementById('ham');
+  const navLinks = document.getElementById('navlinks');
+  ham.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+  // Lightbox
+  const items = [...document.querySelectorAll('.drawing-item[data-src]')];
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  let current = 0;
+
+  function open(i) {
+    current = i;
+    lbImg.src = items[i].dataset.src;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  items.forEach((item, i) => item.addEventListener('click', () => open(i)));
+
+  document.getElementById('lbClose').addEventListener('click', close);
+  document.getElementById('lbPrev').addEventListener('click', () => open((current - 1 + items.length) % items.length));
+  document.getElementById('lbNext').addEventListener('click', () => open((current + 1) % items.length));
+
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') open((current - 1 + items.length) % items.length);
+    if (e.key === 'ArrowRight') open((current + 1) % items.length);
+  });
+</script>
+</body>
+</html>
