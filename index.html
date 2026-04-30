@@ -226,7 +226,7 @@
   <div class="hero-content">
     <p class="hero-eyebrow">Portfolio</p>
     <h1 class="hero-name">Chloe <em>Ko</em></h1>
-    <p class="hero-sub">CG Generalist &nbsp;&middot;&nbsp; FX Artist &nbsp;&middot;&nbsp; 3D Motion Designer</p>
+    <p class="hero-sub">CG Generalist &nbsp;&middot;&nbsp; FX Artist</p>
   </div>
   <div class="hero-scroll">
     <span>Scroll</span>
@@ -238,7 +238,7 @@
 <section class="showreel-section">
   <p class="section-label">ShowReel 2024</p>
   <div class="video-wrapper">
-    <video controls id="mainReel">
+    <video controls id="mainReel" preload="metadata" playsinline>
       <source src="images/showreel/Cycle_Thesis_Film.mp4" type="video/mp4">
     </video>
   </div>
@@ -286,9 +286,15 @@
   // Show frame at 3s as cover before user plays
   const reel = document.getElementById('mainReel');
   if (reel) {
-    reel.addEventListener('loadedmetadata', () => {
+    reel.preload = 'metadata';
+    const seek = () => { reel.currentTime = 3; };
+    reel.addEventListener('loadedmetadata', seek, { once: true });
+    reel.addEventListener('canplay', seek, { once: true });
+    // iOS fallback: briefly play then pause to trigger frame render
+    reel.addEventListener('loadeddata', () => {
       reel.currentTime = 3;
     }, { once: true });
+    reel.load();
   }
 </script>
 </body>

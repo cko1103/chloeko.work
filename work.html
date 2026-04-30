@@ -239,13 +239,15 @@
   const navLinks = document.getElementById('navlinks');
   ham.addEventListener('click', () => navLinks.classList.toggle('open'));
 
-  // Video cards: seek to start frame immediately so cover shows correct frame
+  // Video cards: seek to start frame on load (iOS compatible)
   document.querySelectorAll('.work-item video.preview').forEach(video => {
     const startTime = parseFloat(video.dataset.start) || 0;
-    // Seek to start frame as soon as enough data is loaded
-    video.addEventListener('loadedmetadata', () => {
-      video.currentTime = startTime;
-    }, { once: true });
+    video.preload = 'metadata';
+    video.setAttribute('playsinline', '');
+
+    const seekToStart = () => { video.currentTime = startTime; };
+    video.addEventListener('loadedmetadata', seekToStart, { once: true });
+    video.addEventListener('loadeddata', seekToStart, { once: true });
     video.load();
   });
 
