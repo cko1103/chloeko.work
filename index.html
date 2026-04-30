@@ -226,7 +226,7 @@
   <div class="hero-content">
     <p class="hero-eyebrow">Portfolio</p>
     <h1 class="hero-name">Chloe <em>Ko</em></h1>
-    <p class="hero-sub">CG Generalist &nbsp;&middot;&nbsp; FX Artist</p>
+    <p class="hero-sub">CG Generalist &nbsp;&middot;&nbsp; FX Artist &nbsp;&middot;&nbsp; 3D Motion Designer</p>
   </div>
   <div class="hero-scroll">
     <span>Scroll</span>
@@ -238,7 +238,7 @@
 <section class="showreel-section">
   <p class="section-label">ShowReel 2024</p>
   <div class="video-wrapper">
-    <video controls>
+    <video controls id="mainReel">
       <source src="images/showreel/Cycle_Thesis_Film.mp4" type="video/mp4">
     </video>
   </div>
@@ -282,6 +282,14 @@
   const ham = document.getElementById('ham');
   const nav = document.getElementById('navlinks');
   ham.addEventListener('click', () => nav.classList.toggle('open'));
+
+  // Show frame at 3s as cover before user plays
+  const reel = document.getElementById('mainReel');
+  if (reel) {
+    reel.addEventListener('loadedmetadata', () => {
+      reel.currentTime = 3;
+    }, { once: true });
+  }
 </script>
 </body>
 </html>
